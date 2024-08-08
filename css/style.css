@@ -1,5 +1,18 @@
-div h1 {
-  color: rgb(55, 73, 67);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  background-color: rgb(148, 148, 148);
+.tambah {
+  display: flex;
+}
+
+.tambah .menu-kanan {
+  flex: 4;
+  padding: 2rem;
+}
+
+.tambah .menu-kiri {
+  flex: 1;
+  color: rgb(91, 97, 95);
+  padding: 2rem;
+}
+
+.contrainer {
+  padding: 3rem;
 }
