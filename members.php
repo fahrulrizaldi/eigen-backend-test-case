@@ -1,42 +1,48 @@
   <body>
+
+    <?php include "koneksi.php"; ?>
     <!-- Start Header -->
     <?php include "layout/header.html" ?>
     <!-- End Header -->
 
     <!-- Main Navbar -->
+
+    <?php $sql = "SELECT * FROM members"; 
+    
+    
+    ?>
   <div class="contrainer">
     <div class="headerdata">
       <h2> Data Members </h2>
-      <a href="backend/buku/tambah.php" class="btn btn-primary" role="button">Tambah Data</a>
+      <a href="backend/members/tambah.php" class="btn btn-primary" role="button">Tambah Data</a>
     <div>
     
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Code</th>
+      <th scope="col">Name</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
+  
   <tbody class="table-group-divider">
+  <?php
+ 
+  $query = mysqli_query($mysqli, $sql);
+
+  while ($row = mysqli_fetch_array($query))
+{
+  echo '
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+      <td>'.$row['code'].'</td>
+      <td>'.$row['name'].'</td>
+      <td><a href="#"><i data-feather="edit" ></i></a><a href="#"><i data-feather="trash"></a></i></td>
+    </tr>';
+ }
+     ?>
+
+  
   </tbody>
 </table>
 </div>

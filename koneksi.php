@@ -1,5 +1,8 @@
 <?php
-$con = mysqli_connect("localhost","my_user","my_password","my_db");
+$username = "root";
+$password = "";
+$database = "db_test_backend";
+$mysqli = new mysqli("localhost", $username, $password, $database);
 
 // Check connection
 if (mysqli_connect_errno()) {
